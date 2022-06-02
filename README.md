@@ -6,6 +6,48 @@ This repository contains all the material needed by students registered for the 
 
 For a smooth experience, you will need to make sure that you install or update your Python distribution and download the tutorial material before the day of the tutorial. Furthermore, there are a number of data sources (listed below) required for the tutorial. These will need to be downloaded and placed in the resources folder ahead of time.
 
+This workshop will consist of four hands on tutorials / examples. 
+
+#### Visualising Points and Lines
+
+The first part of this task will involve reading, manipulating, and plotting point data and the second will involve the creation linestrings from points. There will be a brief introduction on the task at hand and a run through of the tutorial as well as a brief discussion around the finer points of data visualisation. 
+- Attendees will use the world port index to generate a map showing the locations of the world’s ports. 
+- In the second half, attendees will use the locations of the world’s airports and data on the number of flights between each airport to generate a series of linestrings representing flightpaths and plot this data to show the worlds flight paths.
+
+##### Learning Outcomes
+- Understand how to read and manipulate point/line data as well as generate points and lines from latitude and longitude values. 
+- Understand how to plot point data with Matplotlib.
+- Understand how to generate linestrings from points using Shapely.
+- Understand how to plot line data with GeoPandas.
+- Understand how to reproject shape data using GeoPandas and Cartopy.
+
+#### Visualising Polygons
+
+Following a brief introduction, attendees will be tasked with creating visualisations using polygons and multipolygons. Attendees will use the Natural Earth dataset to generate different visualisations depending on which polygons take their fancy. An example will be provided showing how to overlay the worlds time zones onto a standard world map. 
+
+##### Learning outcomes:
+- Understand how to read and manipulate polygon and multipolygon data as well as generate polygons and multipolygons from latitude and longitude values.
+- Understand how plot polygons and multipolygons using GeoPandas.
+- Understand how to reproject polygons and multipolygons using GeoPandas and Cartopy.
+
+#### Visualising Rasters
+
+There will be a short introduction and then attendees will be tasked with creating visualisations using raster files. There are several open-source raster datasets available through NEO (NASA earth observations) and attendees will be encouraged to use whichever dataset takes their fancy. An example will be provided and discussed outlining how to plot the world’s population density. 
+
+##### Learning outcomes:
+- Understand how to read and manipulate raster data with Rasterio and rioxarray. 
+- Understand how to plot raster data with Rasterio and Matplotlib
+- Understand how to reproject raster data with rioxarray. 
+
+#### Combing shapes with rasters
+
+This section will outline how to overlay shape data like lines or polygons onto raster data like satellite imagery and how to use polygons to isolate specific parts of a raster. For example, use a polygon representing the borders of a country to isolate the data for that country in the raster image.
+
+##### Learning Outcomes:
+- Understanding how to use geospatial reference systems to ensure that the shape data is overlaid on the raster data in the correct location.
+- Understanding how to use rioxarray to clip a raster according to the outline of a polygon.
+
+
 ## Download Tutorial Materials
 
 This GitHub repository is all that is needed in terms of tutorial content. The simplest solution is to download the material using this link:
