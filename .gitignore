@@ -1,5 +1,1 @@
-resources/*.csv
-resources/*.txt
-resources/routes
-resources/airports
-
+resources/*
