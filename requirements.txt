@@ -1,0 +1,8 @@
+geopandas==0.10.2
+pandas==1.4.2
+numpy==1.21.5
+shapely==1.8.0
+matplotlib==3.5.1
+cartopy==0.20.2
+rasterio==1.2.10
+rioxarray==0.11.1
