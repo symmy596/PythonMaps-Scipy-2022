@@ -1,3 +1,7 @@
-resources/*
+resources/hydrobasins*
+resources/NaturalEarth
+resources/*.tif
+resources/routes
+resources/airports
 *.ipynb_checkpoints*
 notebooks/outputs/*
