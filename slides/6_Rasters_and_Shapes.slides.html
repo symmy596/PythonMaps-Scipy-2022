@@ -14867,10 +14867,16 @@ jp-needs-light-background
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">basins</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">basins</span><span class="p">,</span> <span class="n">colors_df</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;MAJ_NAME&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;basin&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">basins</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">basins</span><span class="p">,</span> 
+                  <span class="n">colors_df</span><span class="p">,</span> 
+                  <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;MAJ_NAME&#39;</span><span class="p">,</span> 
+                  <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;basin&#39;</span><span class="p">,</span> 
+                  <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#FCF6F5FF&#39;</span><span class="p">)</span>
-<span class="n">basins</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;MAJ_NAME&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;face&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">basins</span><span class="p">[</span><span class="s1">&#39;colors&#39;</span><span class="p">])</span>
+<span class="n">basins</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> 
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;face&#39;</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="n">basins</span><span class="p">[</span><span class="s1">&#39;colors&#39;</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -14887,19 +14893,6 @@ jp-needs-light-background
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>C:\Users\AdamS\anaconda3\envs\pythonmaps\lib\site-packages\geopandas\plotting.py:644: UserWarning: Only specify one of &#39;column&#39; or &#39;color&#39;. Using &#39;color&#39;.
-  warnings.warn(
-</pre>
-</div>
-</div>
 
 <div class="jp-OutputArea-child">
 
@@ -14935,9 +14928,14 @@ class="
 <span class="kn">from</span> <span class="nn">rasterio</span> <span class="kn">import</span> <span class="n">mask</span> <span class="k">as</span> <span class="n">msk</span> 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">sa_array</span><span class="p">,</span> <span class="n">clipped_transform</span> <span class="o">=</span> <span class="n">msk</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">[</span><span class="n">mapping</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span> <span class="k">for</span> <span class="n">geom</span> <span class="ow">in</span> <span class="n">basins</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">tolist</span><span class="p">()],</span> <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">sa_array</span><span class="p">,</span> <span class="n">clipped_transform</span> <span class="o">=</span> <span class="n">msk</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">[</span><span class="n">mapping</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span> <span class="k">for</span> <span class="n">geom</span> <span class="ow">in</span> <span class="n">basins</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">tolist</span><span class="p">()],</span> 
-                                                      <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">sa_array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">sa_array</span><span class="p">,</span> <span class="n">clipped_transform</span> <span class="o">=</span> <span class="n">msk</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> 
+                                       <span class="p">[</span><span class="n">mapping</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span> <span class="k">for</span> <span class="n">geom</span> <span class="ow">in</span> <span class="n">basins</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">tolist</span><span class="p">()],</span> 
+                                       <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sa_array</span><span class="p">,</span> <span class="n">clipped_transform</span> <span class="o">=</span> <span class="n">msk</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> 
+                                       <span class="p">[</span><span class="n">mapping</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span> <span class="k">for</span> <span class="n">geom</span> <span class="ow">in</span> <span class="n">basins</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">tolist</span><span class="p">()],</span> 
+                                       <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                                       <span class="n">nodata</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">sa_array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
 <span class="n">value_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">sa_array</span><span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">sa_array</span><span class="p">))</span>
 </pre></div>
 
@@ -15006,7 +15004,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[&lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A1E597580&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A1E5971C0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A20693C10&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A20693A90&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A20693280&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A20693310&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A20693E20&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000018A20693C40&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000018A206939D0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000018A20693CA0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A20693520&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A20693640&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A20693070&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000018A20693580&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A20693940&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A20693E80&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000018A1E5A1FD0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A2069A8E0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A2069A9D0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000018A2069A040&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000018A2069A0D0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000018A2069A1C0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000018A2069A250&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000018A2069A280&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000018A2069A3A0&gt;]
+<pre>[&lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B847E4FA0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B847E4CA0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0EB0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0820&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0B80&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0B20&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0D60&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E0C70&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E0D00&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E0940&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0640&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E08B0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0FD0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E0C40&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B84883370&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E8AF0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E8AC0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E80A0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E8130&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E8160&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E8280&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E82E0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E8340&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E84F0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E84C0&gt;]
 </pre>
 </div>
 </div>
@@ -15023,7 +15021,8 @@ class="
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_basins</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Basin&#39;</span><span class="p">:</span> <span class="n">basins</span><span class="o">.</span><span class="n">MAJ_NAME</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()}),</span> <span class="n">geometry</span><span class="o">=</span><span class="n">geoms</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_basins</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Basin&#39;</span><span class="p">:</span> <span class="n">basins</span><span class="o">.</span><span class="n">MAJ_NAME</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()}),</span> 
+                              <span class="n">geometry</span><span class="o">=</span><span class="n">geoms</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15091,8 +15090,13 @@ jp-needs-light-background
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#FCF6F5FF&#39;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">sa_array</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">clipped_transform</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">)</span>
-<span class="n">new_basins</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">sa_array</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> 
+     <span class="n">transform</span><span class="o">=</span><span class="n">clipped_transform</span><span class="p">,</span> 
+     <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">)</span>
+<span class="n">new_basins</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> 
+                <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+                <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
 <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -15206,8 +15210,13 @@ jp-needs-light-background
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#FCF6F5FF&#39;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">sa_array</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">clipped_transform</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">our_cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
-<span class="n">new_basins</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">sa_array</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> 
+     <span class="n">transform</span><span class="o">=</span><span class="n">clipped_transform</span><span class="p">,</span> 
+     <span class="n">cmap</span><span class="o">=</span><span class="n">our_cmap</span><span class="p">,</span> 
+     <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+<span class="n">new_basins</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> 
+                <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+                <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>

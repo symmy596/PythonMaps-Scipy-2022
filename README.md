@@ -1,5 +1,7 @@
 # Creating Beautiful Geospatial Data Visualisations with Python 
  
+![alt text](../resources/assets/blues_r "Title") 
+
 Presented by Dr. Adam Symington (PythonMaps)
 
 This repository contains all the material needed by students registered for the "Creating Beautiful Geospatial Data Visualisations with Python" tutorial at SciPy 2022 on 12th July 2022.

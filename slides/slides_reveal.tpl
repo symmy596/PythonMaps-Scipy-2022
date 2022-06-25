@@ -158,7 +158,7 @@ div.code_cell {
   background-color: transparent;
 }
 div.prompt {
-  width: 11ex;
+  width: 15ex;
   padding: 0.4em;
   margin: 0px;
   font-family: monospace, sans-serif;
@@ -171,7 +171,7 @@ div.output_area pre {
 }
 div.output_prompt {
   /* 5px right shift to account for margin in parent container */
-  margin: 5px 5px 0 0;
+  margin: 2px 2px 0 0;
 }
 div.text_cell.rendered .rendered_html {
   /* The H1 height seems miscalculated, we are just hidding the scrollbar */
@@ -237,7 +237,7 @@ require(
             controls: true,
             progress: true,
             history: true,
-		width: '80%',
+		width: '100%',
 		height: '100%',
 		transition: 'concave',
 
@@ -264,14 +264,14 @@ require(
         function setScrollingSlide() {
             var scroll = {{ resources.reveal.scroll | json_dumps }}
             if (scroll === true) {
-              var h = $('.reveal').height() * 0.95;
+              var h = $('.reveal').height() * 1;
               $('section.present').find('section')
                 .filter(function() {
                   return $(this).height() > h;
                 })
                 .css('height', 'calc(95vh)')
                 .css('overflow-y', 'scroll')
-                .css('margin-top', '20px');
+                .css('margin-top', '5px');
             }
         }
 
