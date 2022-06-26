@@ -1,6 +1,6 @@
 # Creating Beautiful Geospatial Data Visualisations with Python 
  
-![alt text](https://github.com/symmy596/PythonMaps-Scipy-2022/blob/master/resources/assets/blues_r.png) 
+![alt text](https://github.com/symmy596/PythonMaps-Scipy-2022/blob/master/resources/assets/shapping_lanes_dark.png) 
 
 Presented by Dr. Adam Symington (PythonMaps)
 
