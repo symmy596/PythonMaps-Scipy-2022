@@ -14664,22 +14664,18 @@ div.jp-OutputPrompt {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="slides"><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="../resources/assets/opening.png" alt="alt text" title="Title"></p>
 
-     </div>
 </div>
 </div>
 </div>
-
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14687,7 +14683,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../resources/assets/challenge.png" alt="alt text" title="Title"></p>
+<p><img src="../resources/assets/shapping_lanes_dark.png" alt="alt text" title="Title"></p>
 
 </div>
 </div>
@@ -14711,7 +14707,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../resources/assets/namerica_rivers.jpg" alt="alt text" title="Title"></p>
+<p><img src="../resources/assets/namerica_rivers.jpg"  width="500" height="500"></p>
 
 </div>
 </div>
@@ -14750,6 +14746,7 @@ div.jp-OutputPrompt {
 </ul>
 <h4 id="Tutorial-3-Rasters">Tutorial 3 Rasters<a class="anchor-link" href="#Tutorial-3-Rasters">&#182;</a></h4><ul>
 <li><a href="https://globalmaps.github.io/ptc.html">Forests</a></li>
+<li><a href="https://neo.gsfc.nasa.gov/view.php?datasetId=MOD_LSTD_M&amp;year=2021">Surface Temperature</a></li>
 <li><a href="https://neo.gsfc.nasa.gov/">NASA</a></li>
 </ul>
 <h4 id="Tutorial-4-Rasters-and-Shapes">Tutorial 4 Rasters and Shapes<a class="anchor-link" href="#Tutorial-4-Rasters-and-Shapes">&#182;</a></h4><ul>
@@ -14767,10 +14764,16 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Visualising-Points-and-Lines">Visualising Points and Lines<a class="anchor-link" href="#Visualising-Points-and-Lines">&#182;</a></h4><p>The first part of this task will involve reading, manipulating, and plotting point data and the second will involve the creation linestrings from points. There will be a brief introduction on the task at hand and a run through of the tutorial as well as a brief discussion around the finer points of data visualisation.</p>
+<h3 id="Libraries">Libraries<a class="anchor-link" href="#Libraries">&#182;</a></h3><p>The following libraries are required to run the workshop</p>
 <ul>
-<li>Attendees will use the world port index to generate a map showing the locations of the world’s ports. </li>
-<li>In the second half, attendees will use the locations of the world’s airports and data on the number of flights between each airport to generate a series of linestrings representing flightpaths and plot this data to show the worlds flight paths.</li>
+<li>geopandas==0.10.2</li>
+<li>pandas==1.4.2</li>
+<li>numpy==1.21.5</li>
+<li>shapely==1.8.0</li>
+<li>matplotlib==3.5.1</li>
+<li>cartopy==0.20.2</li>
+<li>rasterio==1.2.10</li>
+<li>rioxarray==0.11.1</li>
 </ul>
 
 </div>
@@ -14783,7 +14786,12 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Visualising-Points-and-Lines">Visualising Points and Lines<a class="anchor-link" href="#Visualising-Points-and-Lines">&#182;</a></h4><h5 id="Learning-Outcomes">Learning Outcomes<a class="anchor-link" href="#Learning-Outcomes">&#182;</a></h5><ul>
+<h4 id="Visualising-Points-and-Lines">Visualising Points and Lines<a class="anchor-link" href="#Visualising-Points-and-Lines">&#182;</a></h4><p>The first part of this task will involve reading, manipulating, and plotting point data and the second will involve the creation linestrings from points. There will be a brief introduction on the task at hand and a run through of the tutorial as well as a brief discussion around the finer points of data visualisation.</p>
+<ul>
+<li>Attendees will use the world port index to generate a map showing the locations of the world’s ports. </li>
+<li>In the second half, attendees will use the locations of the world’s airports and data on the number of flights between each airport to generate a series of linestrings representing flightpaths and plot this data to show the worlds flight paths.</li>
+</ul>
+<h5 id="Learning-Outcomes">Learning Outcomes<a class="anchor-link" href="#Learning-Outcomes">&#182;</a></h5><ul>
 <li>Understand how to read and manipulate point/line data as well as generate points and lines from latitude and longitude values. </li>
 <li>Understand how to plot point data with Matplotlib.</li>
 <li>Understand how to generate linestrings from points using Shapely.</li>
@@ -14802,18 +14810,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Visualising-Polygons">Visualising Polygons<a class="anchor-link" href="#Visualising-Polygons">&#182;</a></h4><p>Following a brief introduction, attendees will be tasked with creating visualisations using polygons and multipolygons. Attendees will use the Natural Earth dataset to generate different visualisations depending on which polygons take their fancy. An example will be provided showing how to overlay the worlds time zones onto a standard world map.</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Visualising-Polygons">Visualising Polygons<a class="anchor-link" href="#Visualising-Polygons">&#182;</a></h4><h5 id="Learning-outcomes:">Learning outcomes:<a class="anchor-link" href="#Learning-outcomes:">&#182;</a></h5><ul>
+<h5 id="Learning-outcomes:">Learning outcomes:<a class="anchor-link" href="#Learning-outcomes:">&#182;</a></h5><ul>
 <li>Understand how to read and manipulate polygon and multipolygon data as well as generate polygons and multipolygons from latitude and longitude values.</li>
 <li>Understand how plot polygons and multipolygons using GeoPandas.</li>
 <li>Understand how to reproject polygons and multipolygons using GeoPandas and Cartopy.</li>
@@ -14830,18 +14827,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Visualising-Rasters">Visualising Rasters<a class="anchor-link" href="#Visualising-Rasters">&#182;</a></h4><p>There will be a short introduction and then attendees will be tasked with creating visualisations using raster files. There are several open-source raster datasets available through NEO (NASA earth observations) and attendees will be encouraged to use whichever dataset takes their fancy. An example will be provided and discussed outlining how to plot the world’s population density.</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Visualising-Rasters">Visualising Rasters<a class="anchor-link" href="#Visualising-Rasters">&#182;</a></h4><h5 id="Learning-outcomes:">Learning outcomes:<a class="anchor-link" href="#Learning-outcomes:">&#182;</a></h5><ul>
+<h5 id="Learning-outcomes:">Learning outcomes:<a class="anchor-link" href="#Learning-outcomes:">&#182;</a></h5><ul>
 <li>Understand how to read and manipulate raster data with Rasterio and rioxarray. </li>
 <li>Understand how to plot raster data with Rasterio and Matplotlib</li>
 <li>Understand how to reproject raster data with rioxarray. </li>
@@ -14858,18 +14844,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Combing-shapes-with-rasters">Combing shapes with rasters<a class="anchor-link" href="#Combing-shapes-with-rasters">&#182;</a></h4><p>This section will outline how to overlay shape data like lines or polygons onto raster data like satellite imagery and how to use polygons to isolate specific parts of a raster. For example, use a polygon representing the borders of a country to isolate the data for that country in the raster image.</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Combing-shapes-with-rasters">Combing shapes with rasters<a class="anchor-link" href="#Combing-shapes-with-rasters">&#182;</a></h4><h5 id="Learning-Outcomes:">Learning Outcomes:<a class="anchor-link" href="#Learning-Outcomes:">&#182;</a></h5><ul>
+<h5 id="Learning-Outcomes:">Learning Outcomes:<a class="anchor-link" href="#Learning-Outcomes:">&#182;</a></h5><ul>
 <li>Understanding how to use geospatial reference systems to ensure that the shape data is overlaid on the raster data in the correct location.</li>
 <li>Understanding how to use rioxarray to clip a raster according to the outline of a polygon.</li>
 </ul>

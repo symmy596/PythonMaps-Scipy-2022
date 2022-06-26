@@ -79,6 +79,7 @@ There are a number of datasets required for these tutorials. These will need to 
 #### Tutorial 3 Rasters
 
 - [Forests](https://globalmaps.github.io/ptc.html)
+- [Surface Temperature](https://neo.gsfc.nasa.gov/view.php?datasetId=MOD_LSTD_M&year=2021)
 - [NASA](https://neo.gsfc.nasa.gov/)
 
 #### Tutorial 4 Rasters and Shapes

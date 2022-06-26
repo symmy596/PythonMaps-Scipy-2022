@@ -118,7 +118,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 }
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #727272;
+  border-right-color: #fcf6f5;
 }
 .reveal .controls .navigate-left.enabled:hover,
 .reveal .controls .navigate-left.enabled.enabled:hover {
@@ -126,7 +126,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 }
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #727272;
+  border-left-color: #fcf6f5;
 }
 .reveal .controls .navigate-right.enabled:hover,
 .reveal .controls .navigate-right.enabled.enabled:hover {
@@ -134,7 +134,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 }
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #727272;
+  border-bottom-color: #fcf6f5;
 }
 .reveal .controls .navigate-up.enabled:hover,
 .reveal .controls .navigate-up.enabled.enabled:hover {
@@ -142,14 +142,14 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 }
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #727272;
+  border-top-color: #fcf6f5;
 }
 .reveal .controls .navigate-down.enabled:hover,
 .reveal .controls .navigate-down.enabled.enabled:hover {
   border-top-color: #dfdfdf;
 }
 .reveal .progress span {
-  background: #727272;
+  background: #fcf6f5;
 }
 div.input_area {
   padding: 0.06em;
@@ -195,7 +195,7 @@ a.anchor-link {
 }
 ::-webkit-scrollbar-thumb
 {
-  background: #727272 !important;
+  background: #fcf6f5 !important;
 }
 </style>
 
