@@ -14657,7 +14657,7 @@ div.jp-OutputPrompt {
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --><!-- Reveal Theme -->
-<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/theme/serif.css" id="theme">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/theme/simple.css" id="theme">
 
 </head>
 
@@ -14675,7 +14675,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14694,8 +14694,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3><p>Data Scource - <a href="https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/bedrock/grid_registered/georeferenced_tiff/">Topography</a>
-Data Scource - <a href="https://www.hydrosheds.org/products/hydrobasins">River Basins</a></p>
+<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3><p>Data Scource - <a href="https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/bedrock/grid_registered/georeferenced_tiff/">Topography</a></p>
+<p>Data Scource - <a href="https://www.fao.org/fishery/static/geonetwork/d47ba28e-31be-470d-81cf-ad3d5594fafd/data/">River Basins</a></p>
 <ul>
 <li>Download the data and place in the resources folder</li>
 <li>Use rasterio to open and plot the topography dataset</li>
@@ -14951,7 +14951,12 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3>
+<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3><ul>
+<li>Convert the basin Polygons to LineStrings corresponding to their boundaries.</li>
+<li>Create a new GeoDataFrame containing the MAJ_NAME and the basin boundary.</li>
+<li>Plot the basin boundaries</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -15004,7 +15009,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[&lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B847E4FA0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B847E4CA0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0EB0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0820&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0B80&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0B20&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0D60&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E0C70&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E0D00&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E0940&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0640&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E08B0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E0FD0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E0C40&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B84883370&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E8AF0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E8AC0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E80A0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E8130&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E8160&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x0000029B868E8280&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E82E0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E8340&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E84F0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x0000029B868E84C0&gt;]
+<pre>[&lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842AA850&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842AA550&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842AACA0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842AABE0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842AA5B0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842AAA30&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842AAB20&gt;, &lt;shapely.geometry.linestring.LineString object at 0x00000144842B3310&gt;, &lt;shapely.geometry.linestring.LineString object at 0x00000144842B3250&gt;, &lt;shapely.geometry.linestring.LineString object at 0x00000144842B33D0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842B3460&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842B3220&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842B32B0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x00000144842B30D0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842B3430&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842B34F0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x00000144842B3550&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842B35B0&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842B3760&gt;, &lt;shapely.geometry.linestring.LineString object at 0x00000144842B3730&gt;, &lt;shapely.geometry.multilinestring.MultiLineString object at 0x00000144842B3820&gt;, &lt;shapely.geometry.linestring.LineString object at 0x00000144842B3910&gt;, &lt;shapely.geometry.linestring.LineString object at 0x00000144842B39A0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x00000144842B39D0&gt;, &lt;shapely.geometry.linestring.LineString object at 0x00000144842B3B50&gt;]
 </pre>
 </div>
 </div>
@@ -15298,7 +15303,7 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            var scroll = true
+            var scroll = false
             if (scroll === true) {
               var h = $('.reveal').height() * 0.95;
               $('section.present').find('section')

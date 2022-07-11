@@ -85,7 +85,7 @@ There are a number of datasets required for these tutorials. These will need to 
 #### Tutorial 4 Rasters and Shapes
 
 - [Topography](https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/bedrock/grid_registered/georeferenced_tiff/)
-- [River Basins](https://www.hydrosheds.org/products/hydrobasins)
+- [River Basins](https://www.fao.org/fishery/static/geonetwork/d47ba28e-31be-470d-81cf-ad3d5594fafd/data/)
 
 
 ### Install Packages
