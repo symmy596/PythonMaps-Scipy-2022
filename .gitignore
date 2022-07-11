@@ -1,4 +1,3 @@
-resources/hydrobasins*
 resources/NaturalEarth
 resources/*.tif
 *.ipynb_checkpoints*
