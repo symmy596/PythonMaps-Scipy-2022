@@ -1,4 +1,3 @@
 resources/NaturalEarth
-resources/*.tif
 *.ipynb_checkpoints*
 notebooks/outputs/*
